@@ -1,0 +1,45 @@
+body {
+    background-image: url("../images/background1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#musicBtn {
+    background-color: transparent;
+    border-color: transparent;
+    color: #b8c4e4;
+    font-size: 5vh;
+    position: absolute;
+    top: 5%;
+}
+
+#musicBtn:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.parallax {
+    position: fixed;
+    z-index: -1;
+}
+
+.sparkle {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: white;
+    pointer-events: none; /* so you can still click things if sparkles are in the way */
+    border-radius: 40%;
+    opacity: 0.9;
+    box-shadow: 0 0 7px 3px rgba(255, 255, 255, 0.7);
+    animation: fadeOut 0.5s ease-out forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: scale(0.2);
+    }
+}

@@ -1,0 +1,31 @@
+
+
+
+
+
+
+
+
+.calender li {
+    color: #8697C1;
+    width: calc(100% / 7);
+    font-size: 1.5rem;
+}
+
+.calender .weeks li {
+    cursor: default;
+}
+
+.calender .days {
+    margin-bottom: 5vh;
+}
+
+header .icons .current-date {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.7rem;
+    color: #BDC2E2;
+    margin: 0;
+    pointer-events: none; 
+}

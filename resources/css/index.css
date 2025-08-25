@@ -1,0 +1,51 @@
+.decor_wrapper {
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    padding: 2px;
+}
+
+#dreaming_cow {
+    position: relative;
+    width: 15%;
+    min-width: 120px;
+    max-width: 300px;
+    height: auto;
+    animation: float 3s linear infinite;
+}
+
+#dreamnote {
+    width: 40%; 
+    height: auto;
+    position: relative;
+    margin-bottom: 20vh;
+}
+
+.button_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+    margin-top: -15vh; 
+}
+
+.button_wrapper a:hover {
+    cursor: pointer;
+}
+
+#login, #signup {
+    width: 20vw;
+    min-width: 180px;
+     z-index: 10;
+}
+
+@keyframes float {
+    0%   { transform: translateY(0); }
+    25%  { transform: translateY(-20px); }
+    50%  { transform: translateY(0); }
+    75%  { transform: translateY(20px); }
+    100% { transform: translateY(0); }
+}
+
