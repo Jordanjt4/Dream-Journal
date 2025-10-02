@@ -1,5 +1,6 @@
 <?php
 
+// user must register a username and password
 function emptyInputsSignup($username, $pwd) {
     $result;
 
@@ -12,6 +13,7 @@ function emptyInputsSignup($username, $pwd) {
     return $result;
 }
 
+// username must be numbers/alphabetical characters
 function invalidUid($username) {
     $result;
 
@@ -24,6 +26,8 @@ function invalidUid($username) {
     return $result;
 }
 
+// user must not register an existing username (case sensitive)
+// if existing username found, return it to use for log in
 function uidExists($conn, $username) {
     $result;
     $sql = "SELECT * FROM users WHERE usersUid = ?;"; // this is the query
@@ -49,6 +53,7 @@ function uidExists($conn, $username) {
     mysqli_stmt_close($stmt);
 }
 
+// register user into database
 function createUser($conn, $username, $pwd) {
     $result;
     $sql = "INSERT INTO users (usersUid, usersPwd) VALUES (?, ?);"; 
@@ -68,6 +73,7 @@ function createUser($conn, $username, $pwd) {
     exit();
 }
 
+// user log in, redirect to home page if successful. Otherwise display error
 function loginUser($conn, $username, $pwd) {
     $uidExists = uidExists($conn, $username);
 
@@ -91,6 +97,7 @@ function loginUser($conn, $username, $pwd) {
     }
 }
 
+// update existing entry
 function updateEntry($conn, $entryId, $title, $content, $date) {
     $userId = $_SESSION["userid"];
 
@@ -111,6 +118,7 @@ function updateEntry($conn, $entryId, $title, $content, $date) {
     exit();
 }
 
+// insert new entry
 function createEntry($conn, $title, $content, $date) {
     $userId = $_SESSION["userid"];
 
@@ -131,6 +139,7 @@ function createEntry($conn, $title, $content, $date) {
     return $newId;
 }
 
+// delete entry
 function deleteEntry($conn, $entryId) {
     $userId = $_SESSION["userid"];
 

@@ -6,11 +6,13 @@ error_reporting(E_ALL);
 
 session_start();
 
+// if user not logged in, redirect
 if (!isset($_SESSION["useruid"])) {
     header("location: home.html");
     exit();
 }
 
+// check if request came from a form
 if (isset($_POST["submit"])) {  
     $noteId = trim(isset($_POST["noteId"]) ? $_POST["noteId"] : '');
     $title = trim(isset($_POST["title"]) ? $_POST["title"] : ''); // remove white spaces before and after

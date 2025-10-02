@@ -19,6 +19,9 @@ mysqli_stmt_execute($stmt);
 
 $result = mysqli_stmt_get_result($stmt);
 
+// loop through all rows of the result
+// "this" refers to the html element which called the event
+// which will be used to go up the DOM and delete the whole card
 while ($row = mysqli_fetch_assoc($result)) {
     $id = $row['entriesId'];
     $title = $row['entriesTitle'];

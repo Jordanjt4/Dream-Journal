@@ -1,6 +1,7 @@
 document.addEventListener("mousemove", (event) => {
     let layers = document.querySelectorAll(".layer");
-    let x = (event.clientX / window.innerWidth * 2) - 1; // finding a value between -1 and 1 using curser location
+     // finding a value between -1 and 1 using curser location
+    let x = (event.clientX / window.innerWidth * 2) - 1;
     let y = (event.clientY / window.innerHeight * 2) - 1; 
 
     layers.forEach((layer) => {
