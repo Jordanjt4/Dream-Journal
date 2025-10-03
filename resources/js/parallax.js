@@ -4,6 +4,7 @@ document.addEventListener("mousemove", (event) => {
     let x = (event.clientX / window.innerWidth * 2) - 1;
     let y = (event.clientY / window.innerHeight * 2) - 1; 
 
+    // clouds follow the cursor for parallax effect, intensity controlled by depth
     layers.forEach((layer) => {
         const depth = parseFloat(layer.dataset.depth);
         const moveX = x * depth * 400;
